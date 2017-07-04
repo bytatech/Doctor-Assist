@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lxisoft.byta</groupId>
 	<artifactId>Dr.Assist</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Dr.Assist Maven Webapp</name>
 	<url>http://maven.apache.org</url>
