@@ -1,7 +1,7 @@
-
 package com.lxisoft.byta.controller;
-import java.util.List;
 
+import java.util.List;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,11 +22,21 @@ public class DocController {
 	
 	@Autowired
 	DrAssistServiceImpl repository ;
+	Logger 	log = Logger.getLogger(DocController.class); 
+
 	
-	@RequestMapping("/showdicease")
+	/**
+	 * this method will return a disease based on user input which is a symptom
+	 * @param symptom
+	 * @return
+	 */
+	@RequestMapping("/showdisease")
 	public List<Disease> getSymptoms(String symptom)
 	{
-	
+		log.info("inside getSymptoms" + symptom);
+
+
+		log.info("outside getSymptoms"+ symptom +"  "+repository.findBySymptoms(symptom));
 		return repository.findBySymptoms(symptom);
 	}
 	
