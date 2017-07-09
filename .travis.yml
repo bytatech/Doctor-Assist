@@ -30,5 +30,5 @@ deploy:
  api-key: 
   secure: $HEROKU_API_KEY
  app: doctor-assist
- on: Doctor-Assist
-  branch:arun
+ on: arun
+ 
