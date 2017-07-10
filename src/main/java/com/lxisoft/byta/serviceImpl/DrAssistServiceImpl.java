@@ -21,17 +21,8 @@ public class DrAssistServiceImpl implements DrAssistService {
 	DiseaseRepository repository;
 	Logger log  = Logger.getLogger(DocController.class); 
 
-	/**
-	 * it is used to find one disease based on id
-	 * 
-	 */
-	@Override
-	public Disease findOne(long id) {
-		log.info("inside find one " + id);
-		log.info("outside find one " + id +"   "+ repository.findOne(id));
-
-		return repository.findOne(id);
-	}
+	
+	
 
 	/**
 	 * method to find all diseases
@@ -42,22 +33,9 @@ public class DrAssistServiceImpl implements DrAssistService {
 		log.info("inside find all " );
 		log.info("outside find all " + repository.findAll());
 		
-		return repository.findAll();
+		return (List<Disease>) repository.findAll();
 	}
-	
-	/**
-	 * method to find disease based on Symptoms
-	 * @param symptom
-	 * @return
-	 */
-	public List<Disease> findBySymptoms(String symptom) {
 
-		log.info("inside findBySymptoms " );
-		log.info("outside findBySymptoms " +"   "+symptom + "   "   + repository.findBySymptoms_Symptom(symptom));
-
-		return repository.findBySymptoms_Symptom(symptom);
-
-	}
 
 	
 }

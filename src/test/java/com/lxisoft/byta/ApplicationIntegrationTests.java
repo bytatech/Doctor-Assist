@@ -41,7 +41,7 @@ public class ApplicationIntegrationTests {
 	public void initializesRepositoryWithSampleData() {
 		SecurityUtils.runAs("arun", "arun", "ROLE_DOCTOR");
 		Iterable<Disease> result = repository.findAll();
-
-		assertThat(result, is(iterableWithSize(3)));
+		
+		assertThat(result, is(iterableWithSize(2)));
 	}
 }

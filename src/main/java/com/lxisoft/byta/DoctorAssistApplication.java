@@ -24,11 +24,7 @@ public class DoctorAssistApplication {
 
 
 
-	/**
-	 * configuration class for security
-	 * @author ARUN JOHNSON
-	 *
-	 */
+	
 	@Configuration
 	static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 

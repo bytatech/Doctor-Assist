@@ -1,7 +1,11 @@
 package com.lxisoft.byta.model;
 
-import java.util.List;
-import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
+
 import lombok.Data;
 
 /**
@@ -11,27 +15,17 @@ import lombok.Data;
  * @author ARUN JOHNSON
  *
  */
-@Entity
 @Data
+@NodeEntity(label = "DISEASE")
 public class Disease {
 
-	@Id
-	private long id;
-	private String disease;
-	/**
-	 * A relationship established between Symptoms. It is a many to many
-	 * relationship .
-	 */
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "disease_symptoms", joinColumns = @JoinColumn(name = "disease_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "symptoms_id", referencedColumnName = "id"))
-	List<Symptoms> symptoms;
+	private @GraphId Long id;
 
-	/**
-	 * SELF JOINING relation
-	 */
-	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "symptomaticDiseaseId")
-	private Disease symptamaticDiseases;
+	private String name;
+	private  @Relationship(type = "SYMPTOM_OF" , direction = Relationship.INCOMING) Set<Symptom> symptom = new HashSet<Symptom>();
+
+	
+	
 
 	
 

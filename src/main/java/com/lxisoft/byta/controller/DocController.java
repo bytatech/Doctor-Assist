@@ -36,8 +36,8 @@ public class DocController {
 		log.info("inside getSymptoms" + symptom);
 
 
-		log.info("outside getSymptoms"+ symptom +"  "+repository.findBySymptoms(symptom));
-		return repository.findBySymptoms(symptom);
+		log.info("outside getSymptoms"+ symptom +"  "+repository.findAll());
+		return repository.findAll();
 	}
 	
 	

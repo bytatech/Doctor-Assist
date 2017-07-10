@@ -38,7 +38,7 @@ public class MethodLevelSecurityTests {
 
 	@Autowired
 	DiseaseRepository diseaseRepository;
-Logger l = Logger.getLogger(MethodLevelSecurityTests.class);
+Logger log = Logger.getLogger(MethodLevelSecurityTests.class);
 	@Before
 	public void setUp() {
 		SecurityContextHolder.clearContext();
@@ -62,7 +62,7 @@ Logger l = Logger.getLogger(MethodLevelSecurityTests.class);
 
 		SecurityUtils.runAs("system", "system", "ROLE_USER");
 		try {
-			l.info("IN TRYYYYYYY");
+			log.info("IN TRY BLOCK");
 			diseaseRepository.findAll();
 		//	fail("Expected a security error ");
 		} catch (AccessDeniedException e) {
