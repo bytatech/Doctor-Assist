@@ -31,13 +31,12 @@ public class DocController {
 	 * @return
 	 */
 	@RequestMapping("/showdisease")
-	public List<Disease> getSymptoms(String symptom)
+	public List<Disease> getSymptoms(String name)
 	{
-		log.info("inside getSymptoms" + symptom);
-
-
-		log.info("outside getSymptoms"+ symptom +"  "+repository.findAll());
-		return repository.findAll();
+		log.info("inside getSymptoms" );
+		System.out.println(repository.findAll());
+	
+		return repository.findByName(name);
 	}
 	
 	

@@ -19,5 +19,6 @@ public interface DiseaseRepository extends GraphRepository<Disease> {
 
 	@PreAuthorize("hasRole('ROLE_DOCTOR')")
 	public List<Disease> findAll();
+	public List<Disease> findByName(String name);
 
 }

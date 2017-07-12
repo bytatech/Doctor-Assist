@@ -36,6 +36,11 @@ public class DrAssistServiceImpl implements DrAssistService {
 		return (List<Disease>) repository.findAll();
 	}
 
+	
+	public List<Disease> findByName(String name) {
+		return repository.findByName(name);
+		
+	}
 
 	
 }

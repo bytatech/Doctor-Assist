@@ -1,6 +1,7 @@
 package com.lxisoft.byta.model;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -23,6 +24,7 @@ public class Disease {
 
 	private String name;
 	private  @Relationship(type = "SYMPTOM_OF" , direction = Relationship.INCOMING) Set<Symptom> symptom = new HashSet<Symptom>();
+	private  @Relationship(type = "SYMPTOM_OF", direction = Relationship.INCOMING)  List<Disease> disease;
 
 	
 	
