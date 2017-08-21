@@ -32,8 +32,7 @@ deploy:
    -skip_cleanup: true 
    -secure: $HEROKU_API_KEY
    -app: byta
-   on: 
-     -all_branches: true
+   
    
        
   
