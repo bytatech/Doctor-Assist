@@ -21,7 +21,7 @@ script:
 notifications:
   email:
     recipients:
-    -arun.johnson@lxisoft.com
+    - arun.johnson@lxisoft.com
     on_success: always # default: change
     on_failure: always # default: always
     

@@ -448,3 +448,6 @@ coordinate: {"Vec":[0,0,0,0,0,0,0,0],"Error":1.5,"Adjustment":0,"Height":0.00001
 coordinate: {"Vec":[0,0,0,0,0,0,0,0],"Error":1.5,"Adjustment":0,"Height":0.00001}
 coordinate: {"Vec":[0,0,0,0,0,0,0,0],"Error":1.5,"Adjustment":0,"Height":0.00001}
 coordinate: {"Vec":[0,0,0,0,0,0,0,0],"Error":1.5,"Adjustment":0,"Height":0.00001}
+alive: ARUN-JOHNSON.dc1 192.168.1.107:8302
+alive: ARUN-JOHNSON.dc1 192.168.1.107:8302
+alive: ARUN-JOHNSON.dc1 192.168.0.117:8302
