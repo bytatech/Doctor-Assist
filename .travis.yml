@@ -1,15 +1,8 @@
 language: java
 sudo: false
-install: true
-addons:
-  sonarcloud:
-    organization: "arun-johnson-github"
-    token:
-      secure: "9e407ac32d6a6da98970e23542eaceb9bb44616f"
 cache:
   directories:
     - $HOME/.m2
-    - $HOME/.sonar/cache
 env:
   global:
     - MAVEN_OPTS="-XX:MaxPermSize=256m -Xmx512m"
@@ -32,6 +25,18 @@ notifications:
     on_success: always # default: change
     on_failure: always # default: always
     
- webhooks:
-    - secure: "9e407ac32d6a6da98970e23542eaceb9bb44616f"
-  on_start: always
+deploy:
+ provider: heroku
+ buildpack: java
+ api-key:
+ skip_cleanup: true 
+ secure: $HEROKU_API_KEY
+ app: byta
+ on: 
+  all_branches: true
+   
+ run:
+    - "consul agent -server -data-dir test -bootstrap-expect 1" 
+    - restart
+    - "mvnw"        
+  
