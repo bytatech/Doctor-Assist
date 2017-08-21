@@ -27,11 +27,11 @@ notifications:
     
 deploy:
    -provider: heroku
-    buildpack: java
-    api-key:
-    skip_cleanup: true 
-    secure: $HEROKU_API_KEY
-    app: byta
+   -buildpack: java
+   -api-key:
+   -skip_cleanup: true 
+   -secure: $HEROKU_API_KEY
+   -app: byta
    on: 
      -all_branches: true
    
