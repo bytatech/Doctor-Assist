@@ -35,8 +35,5 @@ deploy:
    on: 
      -all_branches: true
    
-  run:
-    - "rake db:migrate"
-    - restart
-    - "rake cleanup"        
+       
   
