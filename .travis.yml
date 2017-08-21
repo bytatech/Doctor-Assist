@@ -21,22 +21,22 @@ script:
 notifications:
   email:
     recipients:
-      - arun.johnson@lxisoft.com
+    -arun.johnson@lxisoft.com
     on_success: always # default: change
     on_failure: always # default: always
     
 deploy:
    -provider: heroku
-   -buildpack: java
-   -api-key:
-   -skip_cleanup: true 
-   -secure: $HEROKU_API_KEY
-   -app: byta
-   -on: 
-     all_branches: true
+    buildpack: java
+    api-key:
+    skip_cleanup: true 
+    secure: $HEROKU_API_KEY
+    app: byta
+   on: 
+     -all_branches: true
    
-  -run:
-     - "consul agent -server -data-dir test -bootstrap-expect 1" 
-     - restart
-     - "mvnw"        
+  run:
+    -"consul agent -server -data-dir test -bootstrap-expect 1" 
+    -restart
+    -"mvnw"        
   
