@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="bytaApp.treatmentProcedure.home.title">Treatment Procedures</span>
+        <button class="btn btn-primary float-right create-treatment-procedure-my-suffix" [routerLink]="['/', { outlets: { popup: ['treatment-procedure-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="bytaApp.treatmentProcedure.home.createLabel">
+            Create new Treatment Procedure
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="treatmentProcedures">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="bytaApp.treatmentProcedure.name">Name</span></th>
+            <th><span jhiTranslate="bytaApp.treatmentProcedure.disease">Disease</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let treatmentProcedure of treatmentProcedures ;trackBy: trackId">
+                <td><a [routerLink]="['../treatment-procedure-my-suffix', treatmentProcedure.id ]">{{treatmentProcedure.id}}</a></td>
+                <td>{{treatmentProcedure.name}}</td>
+                <td>
+                    <div *ngIf="treatmentProcedure.disease">
+                        <a [routerLink]="['../disease-my-suffix', treatmentProcedure.disease?.id ]" >{{treatmentProcedure.disease?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../treatment-procedure-my-suffix', treatmentProcedure.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'treatment-procedure-my-suffix/'+ treatmentProcedure.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'treatment-procedure-my-suffix/'+ treatmentProcedure.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+
+<div *ngIf="diagnosticTest">
+    <h2><span jhiTranslate="bytaApp.diagnosticTest.detail.title">Diagnostic Test</span> {{diagnosticTest.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bytaApp.diagnosticTest.name">Name</span></dt>
+        <dd>
+            <span>{{diagnosticTest.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bytaApp.diagnosticTest.treatmentProcedure">Treatment Procedure</span></dt>
+        <dd>
+            <div *ngIf="diagnosticTest.treatmentProcedure">
+                <a [routerLink]="['/treatment-procedure-my-suffix', diagnosticTest.treatmentProcedure?.id]">{{diagnosticTest.treatmentProcedure?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'diagnostic-test-my-suffix/'+ diagnosticTest.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

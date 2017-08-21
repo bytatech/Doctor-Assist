@@ -1,0 +1,24 @@
+{
+    "bytaApp": {
+        "treatmentProcedure" : {
+            "home": {
+                "title": "Treatment Procedures",
+                "createLabel": "Create a new Treatment Procedure",
+                "createOrEditLabel": "Create or edit a Treatment Procedure"
+            },
+            "created": "A new Treatment Procedure is created with identifier {{ param }}",
+            "updated": "A Treatment Procedure is updated with identifier {{ param }}",
+            "deleted": "A Treatment Procedure is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Treatment Procedure {{ id }}?"
+            },
+            "detail": {
+                "title": "Treatment Procedure"
+            },
+            "name": "Name",
+            "medicine": "Medicine",
+            "diagnosticTest": "Diagnostic Test",
+            "disease": "Disease"
+        }
+    }
+}

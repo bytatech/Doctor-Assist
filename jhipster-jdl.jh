@@ -1,0 +1,51 @@
+entity Disease {
+	id Long,
+	name String
+}
+
+entity Symptom {
+	id Long,
+    name String
+}
+
+entity Medicine {
+	id Long,
+	name String,
+	dose Integer
+	
+}
+
+
+
+entity TreatmentProcedure {
+	id Long,
+	name String 
+    }
+
+
+entity DiagnosticTest {
+	id Long,
+	name String
+}
+
+
+relationship ManyToMany {
+	Disease{symptom(name)} to Symptom{name}
+}
+
+relationship OneToMany {
+	Disease{treatmentProcedure} to TreatmentProcedure{disease},
+	TreatmentProcedure{medicine} to Medicine{treatmentProcedure},
+	TreatmentProcedure{diagnosticTest} to DiagnosticTest{treatmentProcedure}
+
+	
+}
+
+
+
+
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix

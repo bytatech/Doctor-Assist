@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "medicine",
+            "otherEntityName": "medicine",
+            "otherEntityRelationshipName": "treatmentProcedure"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "diagnosticTest",
+            "otherEntityName": "diagnosticTest",
+            "otherEntityRelationshipName": "treatmentProcedure"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "disease",
+            "otherEntityName": "disease",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170806140815",
+    "entityTableName": "treatment_procedure",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

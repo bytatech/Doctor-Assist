@@ -1,0 +1,35 @@
+
+<div *ngIf="medicine">
+    <h2><span jhiTranslate="bytaApp.medicine.detail.title">Medicine</span> {{medicine.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="bytaApp.medicine.name">Name</span></dt>
+        <dd>
+            <span>{{medicine.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="bytaApp.medicine.dose">Dose</span></dt>
+        <dd>
+            <span>{{medicine.dose}}</span>
+        </dd>
+        <dt><span jhiTranslate="bytaApp.medicine.treatmentProcedure">Treatment Procedure</span></dt>
+        <dd>
+            <div *ngIf="medicine.treatmentProcedure">
+                <a [routerLink]="['/treatment-procedure-my-suffix', medicine.treatmentProcedure?.id]">{{medicine.treatmentProcedure?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'medicine-my-suffix/'+ medicine.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
