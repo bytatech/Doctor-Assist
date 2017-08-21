@@ -26,16 +26,16 @@ notifications:
     on_failure: always # default: always
     
 deploy:
-  -provider: heroku
-   buildpack: java
-   api-key:
-   skip_cleanup: true 
-   secure: $HEROKU_API_KEY
-   app: byta
-   on: 
-    all_branches: true
+   -provider: heroku
+   -buildpack: java
+   -api-key:
+   -skip_cleanup: true 
+   -secure: $HEROKU_API_KEY
+   -app: byta
+   -on: 
+     all_branches: true
    
-  run:
+  -run:
      - "consul agent -server -data-dir test -bootstrap-expect 1" 
      - restart
      - "mvnw"        
